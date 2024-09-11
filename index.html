@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="author" content="Shafqat Mashrakey" />
+    <!-- HTML slidy was developed by Dave Raggett  -->
+    <title>SCSU CSC 543: Spring 2023</title>
+
+    <!--  external Cascading Style Sheets for styling all slides -->
+    <link rel="stylesheet" type="text/css" media="screen, projection, print" href="scripts/slidy.css" />
+    <!-- http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css -->
+    <link rel="stylesheet" type="text/css" href="scripts/www-presentation.css" />
+    <link rel="stylesheet" type="text/css" href="scripts/image-transition.css" />
+
+    <!--  external JavaScript functions for slideshow behavior (slidy) and simplified JavaScript library (jQuery)
+        for a variety of uses ("write less. do more."; see jquery.com )-->
+    <script src="scripts/slidy.js" charset="utf-8" type="text/javascript"></script>
+    <!-- http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js-->
+    <script src="scripts/jquery-3.3.1.min.js" charset="utf-8" type="text/javascript"></script>
+    <!-- https://code.jquery.com/jquery-3.3.1.min.js -->
+    <script src="scripts/www-presentation.js" charset="utf-8" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="www-presentation-header"><img src="images/scsu-logo-compact-blue.png" style="height: 70px;" />
+        <div class="www-presentation-header-text"></div>
+    </div>
+    <div class="slide titlepage">
+        <h1 class="title"><br>
+            <font color="#000080"></font>
+        </h1>
+        <p class="date">CSC 543: Web Programming</p>
+        <p class="author">Assignment 2</p><br>
+        <p class="author"><a href="mailto:mashrakeys1@southernct.edu?subject=CSC543">Shafqat Mashrakey</a><br>
+        <p class="author">Professor Philip Barello</p><br>
+        Computer Science Department <br>
+        <font color="#8080FF" style="text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Southern
+            Connecticut State University</font>
+        </p>
+        <button id="view-fullscreen" onclick="goFullscreen">*</button>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API/Guide -->
+        <script type="text/javascript">
+            (function goFullscreen() {
+                var viewFullScreen = document.getElementById("view-fullscreen");
+                if (viewFullScreen) {
+                    viewFullScreen.addEventListener("click", function () {
+                        var docElm = document.documentElement;
+                        if (docElm.requestFullscreen) {
+                            docElm.requestFullscreen();
+                        }
+                        else if (docElm.msRequestFullscreen) {
+                            docElm = document.body; //overwrite the element (for IE)
+                            docElm.msRequestFullscreen();
+                        }
+                        else if (docElm.mozRequestFullScreen) {
+                            docElm.mozRequestFullScreen();
+                        }
+                        else if (docElm.webkitRequestFullScreen) {
+                            docElm.webkitRequestFullScreen();
+                        }
+                    }, false);
+                }
+
+                var cancelFullScreen = document.getElementById("cancel-fullscreen");
+                if (cancelFullScreen) {
+                    cancelFullScreen.addEventListener("click", function () {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        }
+                        else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        }
+                        else if (document.mozCancelFullScreen) {
+                            document.mozCancelFullScreen();
+                        }
+                        else if (document.webkitCancelFullScreen) {
+                            document.webkitCancelFullScreen();
+                        }
+                    }, false);
+                }
+
+                var fullscreenState = document.getElementById("fullscreen-state");
+                if (fullscreenState) {
+                    document.addEventListener("fullscreenchange", function () {
+                        fullscreenState.innerHTML = (document.fullscreenElement) ? "" : "not ";
+                    }, false);
+
+                    document.addEventListener("msfullscreenchange", function () {
+                        fullscreenState.innerHTML = (document.msFullscreenElement) ? "" : "not ";
+                    }, false);
+
+                    document.addEventListener("mozfullscreenchange", function () {
+                        fullscreenState.innerHTML = (document.mozFullScreen) ? "" : "not ";
+                    }, false);
+
+                    document.addEventListener("webkitfullscreenchange", function () {
+                        fullscreenState.innerHTML = (document.webkitIsFullScreen) ? "" : "not ";
+                    }, false);
+                }
+            })();
+        </script>
+    </div>
+    <br><br>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Spreadsheet for the visualization</h2>
+        <img src="images/ss1.png" alt="spreadsheet">
+        <img src="images/ss2.png" alt="spreadsheet">
+     
+    </div>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Graph for Code editors</h2>
+        <img src="images/graph1.png" alt="graph based on data"> 
+        <h2><a href="https://code.visualstudio.com/" target="_blank">Visual Studio</a></h2><br>
+        <li>Advantages: can run any programming languages and user friendly</li> 
+        <li>preference:  User friendly,customizable</li>
+        <li>Personal experience: I made this presentation with this</li>
+        <h2><a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a></h2>
+
+        <li>Language Support: IntelliJ IDEA offers extensive language and framework support, making it versatile for various tech stacks.</li>
+        <li>Powerful Debugging Tools: With robust debugging capabilities, IntelliJ IDEA streamlines issue identification and resolution for efficient development.</li>
+        <li>Seamless Integration and Extensibility: Its seamless integration with version control systems and extensive plugin ecosystem make it highly customizable and adaptable to individual project needs.</li>
+        <h2><a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a></h2>
+
+        <li>Advantages of Notepad: Lightweight, simple, and ideal for quick text editing tasks.</li>
+        <li>Preference for Notepad++: Feature-rich, versatile, and favored by developers for its extensive capabilities and customizable interface.</li>
+        <li>Personal Experience: I only used to take or save notes</li>
+    </div>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Graph for Programming Languages</h2>
+        <img src="images/programming graph.png" alt="graph based on data">
+        <h2><a href="https://www.python.org/" target=_blank>Python</a></h2>
+
+        <p>Python is renowned for its simplicity, readability, and versatility, making it a popular choice for a wide range of applications, from web development to data analysis.</p>  
+        <h2><a href="https://www.java.com/en/" target="_blank">Java</a></h2>
+
+        <p>Java is widely used for its platform independence, robustness, and extensive ecosystem, making it a top choice for building enterprise-level applications and large-scale systems.</p>
+        <h2><a href="https://www.w3.org/html/" target="_blank">HTML</a></h2>
+
+        <p>HTML forms the backbone of the web, providing the structure and semantics for building web pages and applications, making it essential for front-end development and creating interactive user experiences.</p>
+
+    </div>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Graph for Frameworks</h2>
+        <img src="images/framework.png" alt="graph based on data"> 
+        <h2><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></h2>
+
+        <p>Bootstrap is a popular front-end framework known for its responsive design, pre-designed components, and ease of use, enabling developers to create visually appealing and mobile-friendly websites with minimal effort.</p>
+        <h2><a href="https://reactjs.org/" target="_blank">React</a></h2>
+
+        <p>React is a powerful JavaScript library for building user interfaces, favored for its component-based architecture, virtual DOM, and efficient rendering, making it ideal for creating interactive and scalable web applications</p>
+        <h2><a href="https://nodejs.org/" target="_blank">Node.js</a></h2>
+
+        <p> Node.js is a runtime environment for executing JavaScript code server-side, renowned for its non-blocking I/O model, event-driven architecture, and vast ecosystem of packages, enabling developers to build fast and scalable back-end applications and APIs.</p>
+     
+       
+    </div>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Graph for File Transfers utilities</h2>
+        <img src="images/FIletransfer.png" alt="graph based on data"> 
+        <h2><a href="https://github.com/" target="_blank">GitHub</a></h2>
+
+        <p>GitHub is a leading platform for version control and collaboration, facilitating code sharing, project management, and continuous integration workflows for software development teams worldwide.</p>
+        <h2><a href="https://filezilla-project.org/" target="_blank">FileZilla</a></h2>
+
+        <p>FileZilla is a popular FTP client renowned for its simplicity, reliability, and cross-platform compatibility, providing users with an intuitive interface for transferring files securely between local and remote servers</p>
+        <h2><a href="https://winscp.net/eng/index.php" target="_blank">WinSCP</a></h2>
+
+        <p>WinSCP is a versatile SFTP and FTP client for Windows, known for its user-friendly interface, robust file transfer capabilities, and support for various encryption protocols, making it a preferred choice for secure file management and synchronization tasks.</p>
+    </div>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Graph for Browsers</h2>
+        <img src="images/browsers.png" alt="graph based on data"> 
+        <h2><a href="https://www.google.com/chrome/" target="_blank">Chrome</a></h2>
+
+        <p>Chrome is a widely-used web browser developed by Google, known for its speed, simplicity, and seamless integration with Google services, offering users a fast and efficient browsing experience</p> 
+        <h2><a href="https://www.microsoft.com/en-us/edge" target="_blank">Edge</a></h2>
+
+        <p>Edge is a web browser developed by Microsoft, featuring a clean and intuitive interface, built-in security features, and integration with Microsoft services, providing users with a streamlined browsing experience optimized for Windows environments.</p>
+        <h2><a href="https://www.mozilla.org/en-US/firefox/" target="_blank">Firefox</a></h2>
+
+        <p>Firefox is an open-source web browser known for its privacy features, customization options, and support for web standards, offering users a flexible and secure browsing experience tailored to their preferences.</p>
+        
+    </div>
+    <div class="section slide level1" id="this">
+        <h2><br><br><br><br>Graph for Operating Systems</h2>
+        <img src="images/operating.png" alt="graph based on data">  
+        <h2><a href="https://www.microsoft.com/en-us/windows/" target="_blank">Windows</a></h2>
+
+        <p>Windows is a widely-used operating system developed by Microsoft, known for its user-friendly interface, extensive software compatibility, and widespread adoption in desktop computing environments.</p>
+        <h2><a href="https://www.linux.org/" target="_blank">Linux</a></h2>
+
+        <p>Linux is a free and open-source operating system kernel that powers various distributions (distros), known for its stability, security, and flexibility, making it popular for servers, embedded systems, and developer environments.</p>
+        <h2><a href="https://www.apple.com/macos/" target="_blank">Mac</a></h2>
+
+        <p>Mac, short for macOS, is the operating system developed by Apple for its Macintosh computers, known for its sleek design, seamless integration with Apple ecosystem, and focus on user experience, offering users a powerful and intuitive computing environment.</p>
+    </div>
+    <div class="section slide level1" id="alternatives">
+        <br><br><br><h1>Reference</h1>
+        <li>National Center for Education Statistics. (n.d.). NCES Kids’ Zone Test your knowledge. https://nces.ed.gov/nceskids/createagraph/</li>
+        <li>Anandmeg. (2023, October 24). What is the Visual Studio IDE? Microsoft Learn. https://learn.microsoft.com/en-us/visualstudio/get-started/visual-studio-ide?view=vs-2022</li>
+        <li>VBScript Functions. (n.d.). https://www.w3schools.com/asp/asp_ref_vbscript_functions.asp</li>
+        <li>Alvinashcraft. (2024, January 22). Microsoft PowerToys. Microsoft Learn. https://learn.microsoft.com/en-us/windows/powertoys/</li>
+        <li>FileZilla - The free FTP solution. (n.d.). https://filezilla-project.org/</li>
+    </div>
+    <div class="section slide level1" id="questions">
+        <br><br><br><h1>Questions?</h1>
+        <ul class="incremental">
+        <br><br><br><br><br><br><br><br><br>
+        <a class="email" href="mailto:mashrakeys1@southernct.edu">
+        <ul style=
+          "text-align: right;
+          font-family: Verdana,sans-serif;
+          text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+          mashrakeys1@southernct.edu</a><br>
+          <img class="right-side-image" src="images/scsu-logo-compact-blue.png"></ul>
+        </ul>
+      </div>
+</body>
+
+</html>
